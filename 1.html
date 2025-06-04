@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>404 - 페이지를 찾을 수 없습니다</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    img.main {
+      max-width: 400px;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    /* "아직" 기본 스타일 */
+    .highlight {
+      color: #555;
+    
+      transition: all 0.6s ease;
+      /*padding: 2px 2px;
+     /* border-radius: 5px;*/
+    }
+
+    .highlight.active {
+      background-color: rgb(0, 0, 0);
+      color: white;
+    }
+    .cursor-container {
+      margin-top: 25px;
+      height: 50px;
+      position: relative;
+    }
+
+ .cursor-img {
+ display: none;
+    width: 30px; /* 필요에 따라 크기 조정 */
+  height: auto;
+  position: absolute;
+  top: 100%;   /* ‘아직’ 바로 밑 */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: blink 1s infinite;
+  transition: opacity 0.5s ease-in-out;
+}
+.cursor-img.visible {
+  display: block;
+    opacity: 1;
+}
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 404 이미지 -->
+  <img class="main" src="404.png" alt="404 Not Found">
+
+  <!-- 문장 중 '아직' 강조 -->
+  <p>Not Found yet</p>
+  <p>
+  죄송합니다. 요청하신 페이지를
+  <span id="highlight" class="highlight" style="position: relative;">
+    아직
+    <img id="cursor" class="cursor-img" src="cursor.png" alt="Cursor Icon" />
+  </span>
+  찾을 수 없습니다.
+</p>
+
+  <!-- 마우스 커서 아이콘 (3초 후에 나타남) -->
+  <!--<img id="cursor" class="cursor-img" src="cursor.png" alt="Cursor Icon">-->
+
+  <script>
+    // 3초 뒤 효과 적용
+    setTimeout(() => {
+      document.getElementById("highlight").classList.add("active");
+      document.getElementById("cursor").classList.add("visible");
+    }, 2000);
+  </script>
+
+</body>
+</html>
