@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I MAKE GAME</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-shadow: 2px 2px 8px #00ffcc;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background-color: #00ffcc;
+      color: #ffffff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00ccaa;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>I MAKE GAME</h1>
+  <button onclick="startGame()">START?</button>
+
+  <script>
+    function startGame() {
+      alert("게임을 시작합니다!");
+      // 여기에 게임 시작 로직을 추가하세요.
+    }
+  </script>
+</body>
+</html>

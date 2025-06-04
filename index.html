@@ -74,8 +74,8 @@
   <p>Not Found yet</p>
   <p>
   죄송합니다. 요청하신 페이지를
-  <span id="highlight" class="highlight" style="position: relative;">
-    아직
+ <span id="highlight" class="highlight" style="position: relative; cursor: pointer;" onclick="goToGame()">
+  아직
     <img id="cursor" class="cursor-img" src="cursor.png" alt="Cursor Icon" />
   </span>
   찾을 수 없습니다.
@@ -90,7 +90,12 @@
       document.getElementById("highlight").classList.add("active");
       document.getElementById("cursor").classList.add("visible");
     }, 2000);
-  </script>
+  // 페이지 이동 함수
+  function goToGame() {
+    window.location.href = "GAME.html"; // 원하는 파일명으로 변경
+  }
+</script>
+ </script>
 
 </body>
 </html>
