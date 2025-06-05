@@ -28,23 +28,23 @@
 }
 
        img.talk {
-position: absolute;
-      top: 53vh;
-      left: 48vw;
-      width: 12vw;
-      transform: translate(-220%, -140%);
-     /* width: 250px;*/
-      z-index: 1;
-    }
+  position: absolute;
+    top: 35%;
+    left: 23%;
+    width: 15vw;
+    max-width: 100px;
+    z-index: 1;
+  }
 
     svg {
-position: absolute;
-     top: 55vh;
-      left: 48vw;
-      width: 40vw;
-      transform: translate(-63%, -430%);
-      z-index: 2;
-    }
+  position: absolute;
+    top: 40.5%;
+    left: 45%;
+    width: 60vw;
+    max-width: 400px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
      path {
       fill: none;
       stroke: #000000;
@@ -88,6 +88,23 @@ position: absolute;
         stroke-dashoffset: 0;
       }
     }
+
+     /* 📱 모바일 전용 조정 */
+  @media (max-width: 768px) {
+    .talk {
+      top: 80%;
+      left: 18%;
+      width: 20vw;
+    }
+
+    .hotdog {
+      width: 80vw;
+    }
+
+    svg {
+      width: 80vw;
+    }
+  }
   </style>
 </head>
 <body>
