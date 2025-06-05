@@ -92,21 +92,25 @@
      /* 📱 모바일 전용 조정 */
   @media (max-width: 768px) {
     .talk {
-      top: 80%;
-      left: 18%;
-      width: 20vw;
-    }
+  top: 41% !important;   /* 말풍선 더 아래 */
+    left: 20% !important;  /* 필요 시 조정 */
+    width: 15vw !important;
+  }
 
     .hotdog {
       width: 80vw;
     }
 
     svg {
-      width: 80vw;
-    }
+   top: 44.5% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 57vw !important;
+  }}
   }
   </style>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 
     <img class="main" src="Hotdog.png" >
