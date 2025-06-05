@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>손글씨 "안녕하세요" (낙서 느낌 완성)</title>
+  <style>
+    body {
+      background: #ffffff;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Nanum Brush Script', cursive;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+        img.main {
+     position: absolute;
+      bottom: 28%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 800px;
+      z-index: 0;
+      opacity: 0.95;
+    }
+
+     svg {
+      position: relative;
+      z-index: 1;
+      left: 38%;
+    }
+
+    /* svg {
+      fill: #d62828; /* 진한 케찹 색상 
+      stroke: #b71c1c; /* 짙은 빨강 테두리
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+    }*/
+    path {
+      fill: none;
+      stroke: #d80303;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: draw 1s ease forwards;
+    }
+
+    /* 애니메이션 지연 시간 */
+    .stroke1 { animation-delay: 0s; }
+    .stroke2 { animation-delay: 0.5s; }
+    .stroke3 { animation-delay: 0.8s; }
+    .stroke4 { animation-delay: 1.1s; }
+    .stroke5 { animation-delay: 1.4s; }
+    .stroke6 { animation-delay: 2.0s; }
+    .stroke7 { animation-delay: 2.3s; }
+    .stroke8 { animation-delay: 2.6s; }
+    .stroke9 { animation-delay: 2.9s; }
+    .stroke10 { animation-delay: 3.2s; }
+    .stroke11 { animation-delay: 3.5s; }
+    .stroke12 { animation-delay: 4.2s; }
+    .stroke13 { animation-delay: 4.5s; }
+    .stroke14 { animation-delay: 4.8s; }
+    .stroke15 { animation-delay: 5.2s; }
+    .stroke16 { animation-delay: 5.5s; }
+    .stroke17 { animation-delay: 5.8s; }
+    .stroke18 { animation-delay: 6.1s; }
+    .stroke19 { animation-delay: 6.4s; }
+    .stroke20 { animation-delay: 6.7s; }
+    .stroke21 { animation-delay: 7s; }
+    .stroke22 { animation-delay: 7.5s; }
+    .stroke23 { animation-delay: 7.8s; }
+    .stroke24 { animation-delay: 8.1s; }
+    .stroke25 { animation-delay: 8.4s; }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <img class="main" src="Hotdog.png" >
+
+
+  <svg viewBox="0 0 1960 150" xmlns="http://www.w3.org/2000/svg" >
+
+    <!-- '안' -->
+    <path class="stroke1" d="M38,52 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path class="stroke2" d="M80,28 Q81,50 80,72" />
+    <path class="stroke3" d="M80,50 Q82,52 90,48" />
+    <path class="stroke4" d="M65,80 L65,95" />
+    <path class="stroke5" d="M65,95 Q70,100 100,95" />
+
+    <!-- '녕' -->
+    <path class="stroke6" d="M120,32 L120,62" />
+    <path class="stroke7" d="M120,62 Q125,63 140,63" />
+    <path class="stroke8" d="M135,38 Q138,38 148,38" />
+     <path class="stroke9" d="M135,50 Q140,52 155,50" />
+    <path class="stroke10" d="M155,30 Q158,52 155,70" />
+    <path class="stroke11" d="M130,90 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+
+    
+    <!-- '하' -->
+    <path class="stroke12" d="M180,30 L180,40" />
+    <path class="stroke13" d="M168,40 Q180,42 200,45" />
+    <path class="stroke14" d="M175,70 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path class="stroke15" d="M210,40 Q212,48 210,90" />
+    <path class="stroke16" d="M210,60 L230,60" />
+
+    <!-- '세' -->
+    <path class="stroke17" d="M255,48 Q250,55 240,70" />
+    <path class="stroke18" d="M255,48 Q265,55 268,65" />
+    <path class="stroke19" d="M262,55 L285,58" />
+    <path class="stroke20" d="M285,40 Q287,55 286,65" />
+    <path class="stroke21" d="M295,40 L297,82" />
+
+    <!-- '요' -->
+    <path class="stroke22" d="M320,50 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path class="stroke23" d="M330,70 L330,80" />
+   <path class="stroke24" d="M340,70 L342,82" />
+    <path class="stroke25" d="M310,82 Q330,84 350,82" />
+
+  </svg>
+</body>
+</html>
