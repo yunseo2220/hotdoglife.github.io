@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>당신은 핫독휴먼 입니까?</title>
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    background: white;
+    height: 100vh;  /* 전체 뷰포트 높이 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+    overflow: hidden;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1vh;
+    /* 버튼 포함 높이 고려해서 컨테이너 크기 조절 */
+    /* 필요하면 padding 등 조절 가능 */
+  }
+
+  .line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 10vw;
+    line-height: 1.2;
+    position: relative;
+  }
+
+  .char {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  #line1 {
+    color: black;
+  }
+
+  #line2 {
+    color: white;
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease, padding 0.5s ease;
+    padding: 0;
+  }
+
+  #line2.bg-active {
+    background-color: black;
+    color: white;
+    padding: 0 1vw;
+  }
+
+  #line3 {
+    background-color: white;
+    color: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 버튼 영역 */
+  #buttons {
+    width: 100vw;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: white;
+    box-sizing: border-box;
+  opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 4.5s; /* "입니까?" 다 뜨고 + 배경 생긴 후 1초 뒤 */
+  }
+  
+
+ button {
+  padding: 1.8rem 3.2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  /*cursor: pointer;*/
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*button:hover {
+  cursor: url('yescu2.png'), pointer;*/
+
+}
+
+button:hover {
+  box-shadow: 0 6px 10px rgba(0,0,0,0.6);
+  transform: translateY(-2px);
+  cursor: pointer; /* 기본 커서 */
+}
+
+#yesBtn:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><text y="24" font-size="24">🌭</text></svg>')32 32, auto;
+}
+
+#noBtn:hover {
+  cursor: url('poop_cursor.png') 32 32, auto;
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 0.3rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 4px; /* 모서리 덜 둥글게 */
+  }
+
+  #buttons {
+    gap: 0.8rem; /* 버튼 사이 간격 좁히기 */
+  }
+}
+}
+button:hover {
+  box-shadow: 0 6px 10px rgba(0,0,0,0.6);
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+  <div id="container">
+    <div class="line" id="line1"></div>
+    <div class="line" id="line2"></div>
+    <div class="line" id="line3"></div>
+    <div id="buttons">
+      <button id="yesBtn">YES</button>
+      <button id="noBtn">NO</button>
+    </div>
+
+
+  </div>
+
+  <script>
+    const delayStep = 0.3;
+
+    function animateLine(text, containerId, delayOffset = 0) {
+      const container = document.getElementById(containerId);
+      [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.className = "char";
+        span.textContent = char;
+        span.style.animationDelay = `${(i * delayStep) + delayOffset}s`;
+        container.appendChild(span);
+      });
+      return (text.length * delayStep) + 0.5 + delayOffset;
+    }
+
+    animateLine("당신은", "line1");
+    const hotdogHumanEnd = animateLine("핫독휴먼", "line2", 1);
+    const imnikkaEnd = animateLine("입니까?", "line3", 1);
+
+    setTimeout(() => {
+      const line2 = document.getElementById("line2");
+      line2.classList.add("bg-active");
+    }, imnikkaEnd * 1000 + 500);
+
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      alert("Enjoy my game");
+    });
+    document.getElementById("noBtn").addEventListener("click", () => {
+      alert("Fail");
+    });
+  </script>
+</body>
+</html>

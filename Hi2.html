@@ -27,24 +27,23 @@
   opacity: 0.95;
 }
 
-       img.talk {
+     img.talk {
   position: absolute;
-    top: 35%;
-    left: 23%;
-    width: 15vw;
-    max-width: 100px;
-    z-index: 1;
-  }
+  top: 26%;
+  left: 26%;
+  width: 15vw;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
-    svg {
+  svg {
   position: absolute;
-    top: 40.5%;
-    left: 45%;
-    width: 60vw;
-    max-width: 400px;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
+  top: 26%;
+  left: 50%;
+  width: 60vw;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
      path {
       fill: none;
       stroke: #000000;
@@ -92,9 +91,9 @@
      /* 📱 모바일 전용 조정 */
   @media (max-width: 768px) {
     .talk {
-  top: 41% !important;   /* 말풍선 더 아래 */
-    left: 20% !important;  /* 필요 시 조정 */
-    width: 15vw !important;
+  width: 22vw !important;
+    top: 43% !important;
+
   }
 
     .hotdog {
@@ -102,11 +101,13 @@
     }
 
     svg {
-   top: 44.5% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 57vw !important;
-  }}
+   width: 75vw !important;
+    top: 43% !important;
+    left: 55%; /* 기본 중앙 */
+  transform: translate(-50%, -50%);
+}
+   /* left: 2% !important;*/
+ 
   }
   </style>
 </head>
@@ -155,7 +156,12 @@
     <path class="stroke25" d="M310,82 Q330,84 350,82" />
 
   </svg>
-
+  <script>
+  // 10초 후에 다른 페이지로 이동
+  setTimeout(function() {
+    window.location.href = "QUEST.html";  // 이동할 파일 이름으로 변경하세요
+  }, 12000); // 10000ms = 10초
+</script>
  
 </body>
 </html>
